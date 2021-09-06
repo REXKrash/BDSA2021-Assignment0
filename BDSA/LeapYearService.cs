@@ -6,8 +6,6 @@ namespace Prime.Services
     {
         public static void Main(string[] args)
         {
-
-            Console.WriteLine("Please enter a year:");
             string value = Console.ReadLine();
 
             var leapYearService = new LeapYearService();
