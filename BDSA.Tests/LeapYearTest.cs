@@ -5,16 +5,28 @@ namespace Prime.UnitTests.Services
 {
     public class LeapYearTest
     {
-        [Fact]
-        public void LeapYear_IsLeapYear() 
+        private readonly LeapYearService _leapYearService;
+
+        public LeapYearTest()
         {
-            var leapYearService = new LeapYearService();
-            
-            Assert.False(leapYearService.IsLeapYear(1700));
-            Assert.False(leapYearService.IsLeapYear(1800));
-            Assert.False(leapYearService.IsLeapYear(1900));
-            Assert.True(leapYearService.IsLeapYear(1600));
-            Assert.True(leapYearService.IsLeapYear(2000));
+            _leapYearService = new LeapYearService();
+        }
+
+        [Theory]
+        [InlineData(1700)]
+        [InlineData(1800)]
+        [InlineData(1900)]
+        public void IsLeapYear_ExpectFalse(int value) 
+        {
+            Assert.False(_leapYearService.IsLeapYear(value));
+        }
+
+        [Theory]
+        [InlineData(1600)]
+        [InlineData(2000)]
+        public void IsLeapYear_ExpectTrue(int value) 
+        {
+            Assert.True(_leapYearService.IsLeapYear(value));
         }
     }
 }
