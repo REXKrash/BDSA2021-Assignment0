@@ -16,7 +16,7 @@ namespace Prime.UnitTests.Services
         [InlineData(1700)]
         [InlineData(1800)]
         [InlineData(1900)]
-        public void IsLeapYear_ExpectFalse(int value) 
+        public void IsLeapYear_ExpectFalse(int value)
         {
             Assert.False(_leapYearService.IsLeapYear(value));
         }
@@ -24,7 +24,7 @@ namespace Prime.UnitTests.Services
         [Theory]
         [InlineData(1600)]
         [InlineData(2000)]
-        public void IsLeapYear_ExpectTrue(int value) 
+        public void IsLeapYear_ExpectTrue(int value)
         {
             Assert.True(_leapYearService.IsLeapYear(value));
         }
